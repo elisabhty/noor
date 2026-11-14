@@ -55,7 +55,7 @@ struct HijriWidgetView: View {
             VStack(spacing: 2) {
                 HStack {
                     Spacer()
-                    NoorMark(height: 24)
+                    NoorMark(height: 24, mood: NoorMood.forTime(entry.date))
                 }
                 Text("\(entry.hijri.day)")
                     .font(.system(size: 46, weight: .bold, design: .rounded))

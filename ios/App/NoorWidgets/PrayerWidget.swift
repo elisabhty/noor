@@ -80,7 +80,7 @@ struct PrayerWidgetView: View {
                     .font(.system(size: 10, weight: .bold))
                     .foregroundStyle(NoorTheme.leaf)
                 Spacer()
-                NoorMark(height: 28)
+                NoorMark(height: 28, mood: .calm)
             }
             Spacer(minLength: 0)
             Text(name(next))
@@ -109,7 +109,7 @@ struct PrayerWidgetView: View {
                     .multilineTextAlignment(.trailing)
                     .foregroundStyle(NoorTheme.leaf)
                     .frame(maxWidth: 80, alignment: .trailing)
-                NoorMark(height: 26)
+                NoorMark(height: 26, mood: .calm)
             }
             Spacer(minLength: 0)
             HStack(spacing: 4) {

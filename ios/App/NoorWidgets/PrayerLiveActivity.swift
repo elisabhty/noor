@@ -7,7 +7,7 @@ struct PrayerLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: PrayerActivityAttributes.self) { context in
             HStack(spacing: 14) {
-                NoorMark(height: 48)
+                NoorMark(height: 48, mood: .calm)
                 VStack(alignment: .leading, spacing: 2) {
                     Text(context.attributes.lang == "fr" ? "PROCHAINE PRIÈRE" : "NEXT PRAYER")
                         .font(.system(size: 10, weight: .bold))
@@ -37,7 +37,7 @@ struct PrayerLiveActivity: Widget {
         } dynamicIsland: { context in
             DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {
-                    NoorMark(height: 44).padding(.leading, 4)
+                    NoorMark(height: 44, mood: .calm).padding(.leading, 4)
                 }
                 DynamicIslandExpandedRegion(.trailing) {
                     PrayerCountdown(at: context.state.at, lang: context.attributes.lang, stale: context.isStale)

@@ -8,7 +8,7 @@ Mascotte : Noor, une petite lanterne.
 | Partie | Où |
 | --- | --- |
 | App (Aujourd'hui, Coran, Prières, Dhikr, Widgets, Réglages) | `src/` |
-| Mascotte | `src/components/Noor.jsx`, `assets/noor.svg` |
+| Mascotte (4 humeurs) | `assets/mascot/`, `src/components/Noor.jsx` |
 | Widgets iOS + Dynamic Island | `ios/App/NoorWidgets/` |
 | Code partagé app ↔ widgets | `ios/App/Shared/NoorShared.swift` |
 | Pont Capacitor (App Group, Live Activity) | `ios/App/App/NoorBridgePlugin.swift` |
@@ -48,9 +48,19 @@ L'app calcule 30 jours d'heures de prière et les écrit, avec la langue, le ryt
 dans l'App Group. Les widgets lisent ces valeurs. Le verset est choisi par la même formule côté app et côté widget
 (`verseIndex` dans `src/lib/verses.js`, `NoorVerses.index` dans `NoorShared.swift`).
 
+## La mascotte
+
+`assets/mascot/noor-source.png` est l'image d'origine. `scripts/mascot/make_mascot.py` la détoure et fabrique
+les quatre humeurs (`happy`, `calm`, `wow`, `sleepy`), puis `npm run assets` en tire toutes les images :
+app (WebP), widgets et Dynamic Island, icône, écran de lancement et favicon. Pour changer de mascotte,
+remplace `noor-source.png`, relance les deux commandes, et vérifie le résultat (les seuils du visage
+sont réglés sur l'image actuelle).
+
 ## Sources
 
 - Texte arabe (Uthmani) : Noble Qur'an Encyclopedia (quranenc.com), via le paquet `quran-json` (CC BY 4.0).
+  Les tanwin « ouverts » y sont codés à l'ancienne (U+0657, U+065E, U+0656) ; `scripts/build-data.mjs` les convertit
+  en codes Unicode officiels (U+08F0 à U+08F2), sans rien changer d'autre, pour que la police les affiche bien.
 - Traduction française : Muhammad Hamidullah. Traduction anglaise : Saheeh International (via tanzil.net).
 - Heures de prière : bibliothèque `adhan` (MIT).
 - Police arabe : Amiri Quran (SIL Open Font License).

@@ -17,12 +17,27 @@ enum NoorTheme {
     static func arabic(_ size: CGFloat) -> Font { .custom("AmiriQuran-Regular", size: size) }
 }
 
-/// Noor, la mascotte (image du catalogue d'assets du widget).
+/// Les humeurs de Noor (une image par humeur dans le catalogue d'assets du widget).
+enum NoorMood: String {
+    case happy = "Noor"
+    case calm = "NoorCalm"
+    case wow = "NoorWow"
+    case sleepy = "NoorSleepy"
+
+    /// Noor somnole la nuit (22 h – 5 h) et sourit le reste du temps.
+    static func forTime(_ date: Date) -> NoorMood {
+        let hour = Calendar.current.component(.hour, from: date)
+        return hour >= 22 || hour < 5 ? .sleepy : .happy
+    }
+}
+
+/// Noor, la mascotte.
 struct NoorMark: View {
     var height: CGFloat = 26
+    var mood: NoorMood = .happy
 
     var body: some View {
-        Image("Noor")
+        Image(mood.rawValue)
             .resizable()
             .scaledToFit()
             .frame(height: height)

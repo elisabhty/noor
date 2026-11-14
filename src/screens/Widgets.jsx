@@ -28,6 +28,7 @@ export default function Widgets({ goTab }) {
   const times = dayTimes(place, s.method, s.madhab, now);
   const h = hijri(now, s.hijriAdjust);
   const d = DHIKR[s.dhikrIdx] || DHIKR[0];
+  const night = now.getHours() >= 22 || now.getHours() < 5;
 
   async function toggleIsland(on) {
     setMsg('');
@@ -61,7 +62,7 @@ export default function Widgets({ goTab }) {
           <div className="flex h-full flex-col justify-between">
             <p className="ar line-clamp-2 text-[19px]" style={{ lineHeight: 1.8 }}>{v.ar}</p>
             <p className="line-clamp-2 text-[13px] leading-snug text-cream/85">{v[lang]}</p>
-            <div className="flex items-center justify-between"><span className="text-[11px] font-semibold text-gold">{v.name} {v.s}:{v.a}</span><Noor size={20} still /></div>
+            <div className="flex items-center justify-between"><span className="text-[11px] font-semibold text-gold">{v.name} {v.s}:{v.a}</span><Noor size={20} mood={night ? 'sleepy' : 'happy'} still /></div>
           </div>
         </Tile>
       </div>
@@ -91,7 +92,7 @@ export default function Widgets({ goTab }) {
       <div className="grid grid-cols-2 gap-3">
         <Tile wide>
           <div className="flex h-full flex-col justify-between">
-            <div className="flex items-center justify-between"><p className="text-sm font-bold">{place.name}</p><Noor size={22} still /></div>
+            <div className="flex items-center justify-between"><p className="text-sm font-bold">{place.name}</p><Noor size={22} mood="calm" still /></div>
             <div className="flex justify-between">
               {PRAYER_KEYS.filter((k) => k !== 'sunrise').map((k) => {
                 const i = PRAYER_KEYS.indexOf(k); const on = next?.key === k;

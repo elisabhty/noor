@@ -44,7 +44,7 @@ export default function Paywall({ onDone }) {
           line={trial ? t(lang, 'pwThen', PAYWALL.weekly[lang]) : t(lang, 'pwWeekLine', PAYWALL.weekly[lang])} />
         <Plan id="yearly" title={t(lang, 'pwYear')} line={t(lang, 'pwYearLine', PAYWALL.yearly[lang])} />
       </div>
-      <p className="mt-4 h-5 text-center text-sm font-semibold text-mute">{withTrial ? t(lang, 'pwCancel', endLabel) : ''}</p>
+      <p className="mt-4 min-h-5 text-center text-sm font-semibold text-mute">{withTrial ? t(lang, 'pwCancel', endLabel) : ''}</p>
       <div className="mt-auto flex flex-col pt-4">
         <Btn onClick={buy}>{withTrial ? t(lang, 'pwTry') : t(lang, 'pwGo')}</Btn>
         <div className="flex justify-center gap-5 py-3 text-xs text-mute">

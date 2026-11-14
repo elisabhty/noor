@@ -61,7 +61,7 @@ struct VerseWidgetView: View {
                 .foregroundStyle(NoorTheme.gold)
                 .lineLimit(1)
             Spacer()
-            NoorMark(height: mark)
+            NoorMark(height: mark, mood: NoorMood.forTime(entry.date))
         }
     }
 

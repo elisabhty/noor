@@ -94,7 +94,7 @@ struct DhikrWidgetView: View {
                 }
                 Spacer(minLength: 0)
                 VStack(spacing: 10) {
-                    NoorMark(height: 54)
+                    NoorMark(height: 54, mood: done ? .wow : .calm)
                     plus.frame(width: 96)
                 }
             }
