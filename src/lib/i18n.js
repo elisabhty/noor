@@ -1,0 +1,58 @@
+const S = {
+  fr: {
+    today: 'Aujourd’hui', quran: 'Coran', prayers: 'Prières', dhikr: 'Dhikr', widgets: 'Widgets', settings: 'Réglages',
+    fajr: 'Fajr', sunrise: 'Chourouq', dhuhr: 'Dhuhr', asr: 'Asr', maghrib: 'Maghrib', isha: 'Icha',
+    salam: 'As-salâmu ʿalaykum', verseHour: 'Verset de l’heure', verseDay: 'Verset du jour',
+    nextPrayer: 'Prochaine prière', in: 'dans', streak: 'jours de suite', streak1: 'jour',
+    read: 'Lire la sourate', share: 'Partager', saved: 'Gardé', save: 'Garder', favs: 'Versets gardés', noFavs: 'Touche « Garder » sous un verset pour le retrouver ici.',
+    choosePlace: 'Choisis ta ville pour afficher les heures de prière.', locate: 'Me localiser', orCity: 'ou choisis une ville',
+    locating: 'Localisation…', locFail: 'Localisation impossible. Choisis une ville dans la liste.',
+    method: 'Méthode de calcul', asrRule: 'Calcul de l’Asr', shafi: 'Standard (Chafii, Maliki, Hanbali)', hanafi: 'Hanafi',
+    place: 'Ville', change: 'Changer', language: 'Langue', verseRhythm: 'Rythme du verset', everyHour: 'Chaque heure', everyDay: 'Chaque jour',
+    hijriAdj: 'Ajustement de la date hégirienne', days: 'j', hijri: 'Calendrier hégirien', upcoming: 'Prochains repères', inDays: (n) => n === 0 ? 'aujourd’hui' : `dans ${n} j`,
+    approx: 'Dates calculées (Umm al-Qura). Elles peuvent varier d’un jour selon l’observation de la lune.',
+    tap: 'Touche pour compter', reset: 'Remettre à zéro', total: 'au total', done: 'Objectif atteint',
+    wTitle: 'Tes widgets', wSub: 'Noor t’accompagne sur l’écran d’accueil et l’écran verrouillé.',
+    wVerse: 'Verset', wPrayer: 'Prochaine prière', wPrayers: 'Les 5 prières', wDhikr: 'Dhikr (on compte sans ouvrir l’app)', wHijri: 'Date hégirienne', wLock: 'Écran verrouillé',
+    how: 'Ajouter un widget', how1: 'Appuie longuement sur l’écran d’accueil.', how2: 'Touche « Modifier » puis « Ajouter un widget ».', how3: 'Cherche « Noor » et choisis la taille.',
+    island: 'Dynamic Island', islandSub: 'Compte à rebours de la prochaine prière en haut de l’écran et sur l’écran verrouillé.',
+    islandOff: 'Les activités en direct sont désactivées pour Noor dans Réglages iOS.', islandWeb: 'Disponible dans l’app iPhone.', islandNeedPlace: 'Choisis d’abord ta ville dans l’onglet Prières.',
+    start: 'Commencer', next: 'Continuer', ob1: 'Je suis Noor, ta petite lanterne.', ob1s: 'Un verset, tes prières et ton dhikr, toujours sous tes yeux.',
+    ob2: 'Où pries-tu ?', ob2s: 'Pour calculer tes heures de prière. Ta position reste sur ton téléphone.', later: 'Plus tard',
+    ob3: 'Tout est prêt', ob3s: 'Ajoute un widget Noor à ton écran d’accueil pour voir un nouveau verset à chaque heure.',
+    verses: 'versets', meccan: 'Mecquoise', medinan: 'Médinoise', back: 'Retour', search: 'Chercher une sourate',
+    credits: 'Sources', creditsText: 'Texte arabe : Noble Qur’an Encyclopedia (quranenc.com), via quran-json. Traduction française : Muhammad Hamidullah. Traduction anglaise : Saheeh International. Heures de prière : bibliothèque Adhan. Police : Amiri Quran.',
+    now: 'C’est l’heure',
+  },
+  en: {
+    today: 'Today', quran: 'Quran', prayers: 'Prayers', dhikr: 'Dhikr', widgets: 'Widgets', settings: 'Settings',
+    fajr: 'Fajr', sunrise: 'Sunrise', dhuhr: 'Dhuhr', asr: 'Asr', maghrib: 'Maghrib', isha: 'Isha',
+    salam: 'As-salamu alaykum', verseHour: 'Verse of the hour', verseDay: 'Verse of the day',
+    nextPrayer: 'Next prayer', in: 'in', streak: 'day streak', streak1: 'day',
+    read: 'Read the surah', share: 'Share', saved: 'Saved', save: 'Save', favs: 'Saved verses', noFavs: 'Tap “Save” under a verse to find it here.',
+    choosePlace: 'Choose your city to see prayer times.', locate: 'Use my location', orCity: 'or pick a city',
+    locating: 'Locating…', locFail: 'Could not get your location. Pick a city from the list.',
+    method: 'Calculation method', asrRule: 'Asr calculation', shafi: 'Standard (Shafi, Maliki, Hanbali)', hanafi: 'Hanafi',
+    place: 'City', change: 'Change', language: 'Language', verseRhythm: 'Verse rhythm', everyHour: 'Every hour', everyDay: 'Every day',
+    hijriAdj: 'Hijri date adjustment', days: 'd', hijri: 'Hijri calendar', upcoming: 'Coming up', inDays: (n) => n === 0 ? 'today' : `in ${n} d`,
+    approx: 'Calculated dates (Umm al-Qura). They may shift by a day depending on moon sighting.',
+    tap: 'Tap to count', reset: 'Reset', total: 'in total', done: 'Goal reached',
+    wTitle: 'Your widgets', wSub: 'Noor stays with you on your Home Screen and Lock Screen.',
+    wVerse: 'Verse', wPrayer: 'Next prayer', wPrayers: 'The 5 prayers', wDhikr: 'Dhikr (count without opening the app)', wHijri: 'Hijri date', wLock: 'Lock Screen',
+    how: 'Add a widget', how1: 'Touch and hold the Home Screen.', how2: 'Tap “Edit”, then “Add Widget”.', how3: 'Search “Noor” and pick a size.',
+    island: 'Dynamic Island', islandSub: 'Countdown to the next prayer at the top of the screen and on the Lock Screen.',
+    islandOff: 'Live Activities are turned off for Noor in iOS Settings.', islandWeb: 'Available in the iPhone app.', islandNeedPlace: 'Choose your city in the Prayers tab first.',
+    start: 'Get started', next: 'Continue', ob1: 'I’m Noor, your little lantern.', ob1s: 'A verse, your prayers and your dhikr, always in sight.',
+    ob2: 'Where do you pray?', ob2s: 'To calculate your prayer times. Your location stays on your phone.', later: 'Later',
+    ob3: 'All set', ob3s: 'Add a Noor widget to your Home Screen to see a new verse every hour.',
+    verses: 'verses', meccan: 'Meccan', medinan: 'Medinan', back: 'Back', search: 'Search a surah',
+    credits: 'Sources', creditsText: 'Arabic text: Noble Qur’an Encyclopedia (quranenc.com), via quran-json. French translation: Muhammad Hamidullah. English translation: Saheeh International. Prayer times: Adhan library. Font: Amiri Quran.',
+    now: 'It’s time',
+  },
+};
+export const t = (lang, key, ...a) => { const v = (S[lang] || S.fr)[key]; return typeof v === 'function' ? v(...a) : v ?? key; };
+export const fmtTime = (d, lang) => d.toLocaleTimeString(lang === 'fr' ? 'fr-FR' : 'en-US', { hour: 'numeric', minute: '2-digit' });
+export function fmtLeft(ms) {
+  const m = Math.max(0, Math.round(ms / 60000)); const h = Math.floor(m / 60);
+  return h ? `${h} h ${String(m % 60).padStart(2, '0')}` : `${m} min`;
+}

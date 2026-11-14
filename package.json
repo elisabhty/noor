@@ -1,0 +1,37 @@
+{
+  "name": "noor",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "data": "node scripts/build-data.mjs",
+    "assets": "node scripts/build-assets.mjs",
+    "ios": "npm run data && npm run assets && vite build && cap sync ios",
+    "open": "cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "^8.6.2",
+    "@capacitor/geolocation": "^8.2.4",
+    "@capacitor/haptics": "^8.0.2",
+    "@capacitor/ios": "^8.6.2",
+    "@fontsource/amiri-quran": "^5.3.0",
+    "adhan": "^4.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.6.2",
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "quran-json": "^3.1.2",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.5",
+    "vite": "^8.3.6"
+  }
+}
