@@ -17,6 +17,13 @@ Mascotte : Noor, une petite lanterne.
 Widgets : Verset (petit, moyen, grand, écran verrouillé), Heures de prière (petit, moyen, 3 formats écran verrouillé),
 Dhikr (bouton +1 sans ouvrir l'app), Date hégirienne, et la Live Activity « prochaine prière ».
 
+## Onboarding, parcours et paywall
+
+L'onboarding (`src/screens/Onboarding.jsx`) pose quelques questions, propose un rappel quotidien, puis affiche un parcours
+de 7 jours (`src/lib/journey.js`) et le paywall (`src/screens/Paywall.jsx`).
+Le paywall n'encaisse rien pour l'instant : dans `src/lib/paywall.js`, `live` est à `false` et les prix sont des valeurs
+à remplacer par celles d'App Store Connect. Rien n'est encore réservé aux abonnés.
+
 ## Lancer sur ton Mac
 
 ```bash

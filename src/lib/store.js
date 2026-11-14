@@ -10,6 +10,8 @@ const defaults = {
   method: sysLang === 'fr' ? 'france12' : 'mwl', madhab: 'shafi', hijriAdjust: 0,
   dhikrIdx: 0, dhikrCount: 0, dhikrDay: '', dhikrTotal: 0,
   streak: 0, lastOpen: '', liveActivity: false, favs: [],
+  name: '', reason: '', since: '', level: '', wants: [], moment: 'morning', intention: '',
+  journeyStart: '', journeyDone: [], notif: false, premium: false,
 };
 
 let state = { ...defaults, ...safeParse(localStorage.getItem(KEY)) };

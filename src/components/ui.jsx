@@ -46,3 +46,26 @@ export const Icon = ({ name, size = 24, className = '' }) => (
     <path d={paths[name]} />
   </svg>
 );
+
+const optIcons = {
+  moon: 'M20 14.500A8 8 0 019.500 4a8 8 0 1010.500 10.500z',
+  flame: 'M12 3c1 3 5 5 5 10a5 5 0 01-10 0c0-2 1-3 2-4 0 2 1 3 2 3 1-2 0-6 1-9z',
+  book: paths.quran, clock: paths.prayers,
+  shield: 'M12 3l7 3v6c0 4.500-3 7.500-7 9-4-1.500-7-4.500-7-9V6z',
+  star: 'M12 3l2.700 5.600 6.100.900-4.400 4.300 1 6.100L12 17l-5.400 2.900 1-6.100L3.200 9.500l6.100-.900z',
+};
+export const OptIcon = ({ name }) => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={optIcons[name]} /></svg>
+);
+
+// Ligne de choix des questionnaires (simple ou multiple).
+export const Option = ({ on, icon, children, onClick }) => (
+  <button onClick={() => { tick(); onClick(); }}
+    className={`flex w-full items-center gap-3 rounded-3xl border px-5 py-4 text-left text-[16px] font-medium transition-colors ${on ? 'border-gold bg-gold/15' : 'border-line/60 bg-card/70'}`}>
+    {icon && <span className={on ? 'text-gold' : 'text-mute'}><OptIcon name={icon} /></span>}
+    <span className="flex-1">{children}</span>
+    <span className={`flex h-6 w-6 items-center justify-center rounded-full border-2 ${on ? 'border-gold bg-gold text-night' : 'border-line'}`}>
+      {on && <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.500" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.500l4.500 4.500L19 7.500" /></svg>}
+    </span>
+  </button>
+);
